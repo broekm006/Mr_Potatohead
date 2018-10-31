@@ -37,21 +37,21 @@ public class MainActivity extends AppCompatActivity {
     {
         CheckBox checkbox = (CheckBox) v;
         Log.d("potato", "checkClicked: ");
-        String x = checkbox.getText().toString();
+        String get_name = checkbox.getText().toString();
 
         // use string name resource for the id of the image
-        int idss = getResources().getIdentifier(x, "id", getPackageName()); //google power
+        int resID_from_name = getResources().getIdentifier(get_name, "id", getPackageName()); //google power
 
         // check if checkbox is checked. And show or dont shown image accordingly
         if(checkbox.isChecked() == false)
         {
-            ImageView image = findViewById(idss);
+            ImageView image = findViewById(resID_from_name);
             image.setVisibility(View.INVISIBLE);
         }
 
         else
         {
-            ImageView image = findViewById(idss);
+            ImageView image = findViewById(resID_from_name);
             image.setVisibility(View.VISIBLE);
         }
     }
